@@ -34,4 +34,19 @@ module.exports = {
       default: 1,
     },
   },
+  gasReporter: {
+    enabled: true,
+    outputFile: "gas-report.txt",
+    noColors: true,
+    currency: "INR",
+    coinmarketcap: CMC_API_KEY,
+  },
+  etherscan: {
+    apiKey: {
+      rinkeby: ETHERSCAN_API_KEY,
+    },
+  },
+  mocha: {
+    timeout: 300000, // 300 seconds
+  },
 };
