@@ -6,7 +6,7 @@ const networkConfig = {
     entranceFee: "100000000000000000",
     gasLane:
       "0xd89b2bf150e3b9e13446986e571fb9cab24b13cea0a43ea20a6049a85cc807cc",
-    subscriptionId: "",
+    subscriptionId: "21228", // https://vrf.chain.link/rinkeby/21228
     callbackGasLimit: "500000",
     interval: "30",
   },
@@ -26,6 +26,5 @@ const networkConfig = {
 };
 
 const developmentChains = ["hardhat", "localhost"];
-const TIME_INTERVAL = 60;
 
-module.exports = { networkConfig, developmentChains, TIME_INTERVAL };
+module.exports = { networkConfig, developmentChains };

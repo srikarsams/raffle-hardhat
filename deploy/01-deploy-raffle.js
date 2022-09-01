@@ -38,10 +38,16 @@ module.exports = async function ({ getNamedAccounts, deployments, network }) {
   } else {
     log("Picking the mock v2coordinator testnet address...");
     vrfCoordinatorV2Address = networkConfig[chainId]["vrfCoordinatorV2"];
-    subscriptionId = networkConfig[chainId["subscriptionId"]];
+    subscriptionId = networkConfig[chainId]["subscriptionId"];
   }
 
   log("Deploying Raffle contract...");
+  console.log(vrfCoordinatorV2Address);
+  console.log(entranceFee);
+  console.log(gasLane);
+  console.log(subscriptionId);
+  console.log(callbackGasLimit);
+  console.log(interval);
   const raffle = await deploy("Raffle", {
     from: deployer,
     args: [
@@ -58,7 +64,14 @@ module.exports = async function ({ getNamedAccounts, deployments, network }) {
 
   if (!developmentChains.includes(network.name)) {
     log("Verifying...");
-    await verify(raffle.address, args);
+    await verify(raffle.address, [
+      vrfCoordinatorV2Address,
+      entranceFee,
+      gasLane,
+      subscriptionId,
+      callbackGasLimit,
+      interval,
+    ]);
     log("---------------------------------------------");
   }
 };
