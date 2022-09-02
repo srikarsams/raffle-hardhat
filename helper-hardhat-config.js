@@ -14,7 +14,7 @@ const networkConfig = {
     name: "polygon",
     blockConfirmations: 6,
   },
-  31337: {
+  1337: {
     name: "hardhat",
     blockConfirmations: 0,
     entranceFee: "100000000000000000",

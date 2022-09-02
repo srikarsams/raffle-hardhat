@@ -73,6 +73,8 @@ module.exports = async function ({ getNamedAccounts, deployments, network }) {
       interval,
     ]);
     log("---------------------------------------------");
+  } else {
+    log("---------------------------------------------");
   }
 };
 
